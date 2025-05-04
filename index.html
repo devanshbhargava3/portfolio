@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devansh Bhargava | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #e0ffe2;
+      overflow-x: hidden;
+    }
+
+    /* Matrix effect */
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      background-color: #101d10;
+      box-shadow: 0 5px 15px rgba(0,255,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #00ff88;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: #aaffcc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ff88;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ccffcc;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 700px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      color: #00ff88;
+    }
+
+    .hero .sub {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      color: #b9f8cf;
+    }
+
+    .hero span {
+      font-size: 1.2rem;
+      color: #9effc1;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #00ff88;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #caffd2;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .project {
+      background-color: #162d16;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 255, 150, 0.2);
+    }
+
+    .project h3 {
+      color: #00ff88;
+    }
+
+    .project p {
+      color: #ccffcc;
+      margin-top: 0.5rem;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #00ff88;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #101d10;
+      color: #aaffcc;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Matrix Effect Canvas -->
+  <canvas id="matrix"></canvas>
+
+  <header>
+    <h1>Devansh Bhargava</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Devansh Bhargava</h2>
+    <p class="sub">Roll No. 27051 | CSE 1</p>
+    <span id="typing"></span>
+  </section>
+
+  <section id="about" class="about container">
+    <h2 class="section-title">About Me</h2>
+    <p>1st Year B.Tech CSE Student | Blockchain Enthusiast | Crypto Investor | Learning Java  | Passionate About Fitness and Weightlifting | Eager to Learn and Grow in Tech</p>
+  </section>
+
+  <section id="projects" class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A personal responsive portfolio built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project">
+        <h3>Blockchain Voting and Bidding</h3>
+        <p>A decentralized blockchain-based voting and bidding system built using smart contracts on Ethereum.</p>
+      </div>
+      <div class="project">
+        <h3>ToDo List App</h3>
+        <p>A simple JavaScript-based task manager with local storage support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p>You can reach me via email:</p>
+    <a href="mailto:Devanshbhargava3@gmail.com">Devanshbhargava3@gmail.com</a>
+    <p>Or find me on social media:</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/devansh-bhargava-79545b26a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/LinkedIn_Logo_2023.svg" alt="LinkedIn">
+      </a>
+      <a href="https://www.instagram.com/devansh_bhargava_333?igsh=MXN0ZW05cTczN2YzbA==" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+      </a>
+      <a href="mailto:Devanshbhargava3@gmail.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Gmail_Icon.svg" alt="Gmail">
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Devansh Bhargava. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Matrix Effect (JavaScript)
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "アァイィウヴエエオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00FF41";
+      ctx.font = fontSize + "px monospace";
+
+      drops.forEach((y, i) => {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, y * fontSize);
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      });
+    }
+
+    setInterval(draw, 50);
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Typing Effect
+    const textArray = ["Web Developer", "Java Programmer", "Python Enthusiast", "DSA Learner"];
+    let count = 0, index = 0, current = '', letter = '';
+
+    (function type() {
+      if (count === textArray.length) count = 0;
+      current = textArray[count];
+      letter = current.slice(0, ++index);
+      document.getElementById("typing").textContent = letter;
+      if (letter.length === current.length) {
+        count++; index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 120);
+      }
+    })();
+  </script>
+
+</body>
+</html>
